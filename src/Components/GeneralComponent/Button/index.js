@@ -20,7 +20,7 @@ export default class Button extends React.Component {
     render() {
         return (
             <button onClick={()=>{this.props.clicker()}}>
-                +
+                {this.props.text}
             </button>
         );
     }

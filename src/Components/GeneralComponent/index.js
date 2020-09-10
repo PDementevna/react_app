@@ -13,13 +13,18 @@ export default class GeneralComponent extends React.Component {
             value: 0
         };
         this.increaseValue = this.increaseValue.bind(this);
+        this.decreaseValue = this.decreaseValue.bind(this);
     }
 
     componentDidMount() {
 
     }
     increaseValue(){
-
+        this.setState({
+            value: this.state.value+1
+        })
+    }
+    decreaseValue(){
         this.setState({
             value: this.state.value-1
         })
@@ -28,7 +33,8 @@ export default class GeneralComponent extends React.Component {
         return (
             <div>
                 <h1>Value is {this.state.value}</h1>
-                <Button clicker={this.increaseValue} />
+                <Button clicker={this.increaseValue} text={"increase"} />
+                <Button clicker={this.decreaseValue} text={"decrease"} />
             </div>
         );
     }
